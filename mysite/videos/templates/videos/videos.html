@@ -1,0 +1,18 @@
+{% extends "videos/base.html" %}
+
+{% block content %}
+<div class="searchbar">
+  <!-- have some input field here -->
+</div>
+<section class="random">
+  {% for video in random_videos %}
+    <p>{{ video }}</p>
+  {% endfor %}
+</section>
+<div class="selected-videos">
+  {% for video in all_videos %}
+    <p>{{ video }}</p>
+  {% endfor %}
+</div>
+
+{% endblock %}

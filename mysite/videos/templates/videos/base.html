@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <header>
+    <p>Videos</p>
+    <p>The P Rules</p>
+    <p>Solstice</p>
+  </header>
+  {% block content %}{% endblock %}
+</body>
+{% if javascript %}
+  <script src="{% static javascript %}"></script>
+{% endif %}
+</html>
