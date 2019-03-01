@@ -1,23 +1,23 @@
 from django.db import models
 
 # Create your models here.
-class Video(models.model):
-    title = models.CharField() #fill in something here
-    source_url = models.CharField? #Check documentation on this
-    embed_link = models.CharField? # Same as above
-    type_id = models.ForeignKey() # Type, more on this later
+class Video(models.Model):
+    title = models.CharField(max_length=200) #fill in something here
+    source_url = models.URLField()#Check documentation on this
+    embed_link = models.CharField(max_length=300) # Same as above
+    type_id = models.ForeignKey('Type', on_delete=models.PROTECT) # Type, more on this later
 
 
-class Type(models.model):
-    name = models.CharField()
+class Type(models.Model):
+    name = models.CharField(max_length=200)
 
 
-class Rules(models.model):
-    rule = models.CharField()
+class Rules(models.Model):
+    rule = models.CharField(max_length=200)
 
 
-class Solstice(models.model):
-    period = models.CharField() #Example: 'Summmer', 'Winter'
-    year = models.CharField()
-    title = models.CharField()
-    description = models.CharField()
+class Solstice(models.Model):
+    period = models.CharField(max_length=200) #Example: 'Summmer', 'Winter'
+    year = models.CharField(max_length=200)
+    title = models.CharField(max_length=200)
+    description = models.TextField(max_length=200)
